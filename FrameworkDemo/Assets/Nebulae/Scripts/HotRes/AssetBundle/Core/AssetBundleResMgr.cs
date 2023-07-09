@@ -134,6 +134,44 @@ namespace Nebulae
             throw new NotImplementedException();
         }
 
+
+        IEnumerator LoadAsync<T>(AssetBundle ab, string assetName, Action<T> onLoaded, Action<float> onProgress) where T : UnityEngine.Object
+        {
+            AssetBundleRequest abr = ab.LoadAssetAsync<T>(assetName);
+
+            do
+            {
+                if (onProgress != null)
+                {
+                    onProgress.Invoke(abr.progress);
+                }
+                yield return new WaitForEndOfFrame();
+            }
+            while (false == abr.isDone);
+
+            //加载完成
+            onLoaded.Invoke((T)abr.asset);
+        }
+
+
+        IEnumerator LoadAllAsync(AssetBundle ab, Action<UnityEngine.Object[]> onLoaded, Action<float> onProgress)
+        {
+            AssetBundleRequest abr = ab.LoadAllAssetsAsync();
+
+            do
+            {
+                if (onProgress != null)
+                {
+                    onProgress.Invoke(abr.progress);
+                }
+                yield return new WaitForEndOfFrame();
+            }
+            while (false == abr.isDone);
+
+            //加载完成
+            onLoaded.Invoke(abr.allAssets);
+        }
+
         public override void Unload(string abName, bool isUnlocadAllLoaded = false, bool isUnLoadDepends = true)
         {
             MakeABNameNotEmpty(ref abName);

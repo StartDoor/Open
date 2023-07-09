@@ -28,7 +28,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
-    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -37,7 +37,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
-    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup>
     <NoConfig>true</NoConfig>
@@ -55,6 +55,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Nebulae\Scripts\CenterUI.cs" />
+     <Compile Include="Assets\Nebulae\Scripts\Defines\EILType.cs" />
      <Compile Include="Assets\Nebulae\Scripts\Defines\EResModes.cs" />
      <Compile Include="Assets\Nebulae\Scripts\Defines\NebulaeConst.cs" />
      <Compile Include="Assets\Nebulae\Scripts\HotRes\AssetBundle\ConfigMgr.cs" />
@@ -63,6 +65,9 @@
      <Compile Include="Assets\Nebulae\Scripts\HotRes\AssetBundle\Core\AssetDataBaseResMgr.cs" />
      <Compile Include="Assets\Nebulae\Scripts\HotRes\AssetBundle\Core\ResourceResMgr.cs" />
      <Compile Include="Assets\Nebulae\Scripts\HotRes\AssetBundle\ResMgr.cs" />
+     <Compile Include="Assets\Nebulae\Scripts\Monos\ASingletonMonoBehaviour.cs" />
+     <Compile Include="Assets\Nebulae\Scripts\Monos\CoroutineProxy.cs" />
+     <Compile Include="Assets\Nebulae\Scripts\Monos\LauncherSetting.cs" />
      <Compile Include="Assets\Nebulae\Scripts\Runtime.cs" />
      <Compile Include="Assets\Nebulae\Scripts\Utility\FileUtility.cs" />
      <Compile Include="Assets\Nebulae\Scripts\ValueObject\LauncherSettingData.cs" />
@@ -250,6 +255,15 @@
  </Reference>
  <Reference Include="UnityEditor">
  <HintPath>F:/unity2020/2019.4.3f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
+ </Reference>
+ <Reference Include="Mono.Cecil">
+ <HintPath>G:/unity project/Open/FrameworkDemo/Assets/Plugins/ThirdLibraries/ILRuntime/Dependencies/Mono.Cecil.dll</HintPath>
+ </Reference>
+ <Reference Include="Mono.Cecil.Mdb">
+ <HintPath>G:/unity project/Open/FrameworkDemo/Assets/Plugins/ThirdLibraries/ILRuntime/Dependencies/Mono.Cecil.Mdb.dll</HintPath>
+ </Reference>
+ <Reference Include="Mono.Cecil.Pdb">
+ <HintPath>G:/unity project/Open/FrameworkDemo/Assets/Plugins/ThirdLibraries/ILRuntime/Dependencies/Mono.Cecil.Pdb.dll</HintPath>
  </Reference>
  <Reference Include="Sirenix.OdinInspector.Attributes">
  <HintPath>G:/unity project/Open/FrameworkDemo/Assets/Plugins/ThirdLibraries/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll</HintPath>
@@ -643,6 +657,10 @@
  </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{1BFA40E4-A9FF-7E63-31A4-609ED127D55D}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
     <ProjectReference Include="Sirenix.OdinValidator.csproj">
       <Project>{52A5F53B-68B0-67E9-F31D-2D6730478D02}</Project>
       <Name>Sirenix.OdinValidator</Name>

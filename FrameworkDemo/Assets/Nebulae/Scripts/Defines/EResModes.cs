@@ -1,6 +1,25 @@
 ﻿namespace Nebulae
 {
     /// <summary>
+    /// 内嵌资源使用模式
+    /// </summary>
+    public enum EBuiltinResMode
+    {
+        /// <summary>
+        /// 热补丁模式（推荐）。优先使用通过网络更新到的资源，其次使用内嵌的资源
+        /// [依赖网络]
+        /// </summary>
+        HOT_PATCH,
+
+        /// <summary>
+        /// 仅使用内嵌资源（一般用来制作不联网的单机游戏）。
+        /// 该模式下不使用DLL来运行，而是直接执行项目内嵌的代码（效率更高）
+        /// [不依赖网络]
+        /// </summary>
+        ONLY_USE,
+    }
+
+    /// <summary>
     /// 热更资源使用模式
     /// </summary>
     public enum EHotResMode

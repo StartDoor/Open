@@ -1,0 +1,11 @@
+
+{
+    "isLogEnable" : true,
+    "hotResMode"     : 1,
+    "netRoots"       : [
+        "http://YourHotResRootUrl"
+    ],
+    "ilType"         : 0,
+    "isTryJitBeforeILRuntime" : false,
+    "isDebugIL"               : false
+}

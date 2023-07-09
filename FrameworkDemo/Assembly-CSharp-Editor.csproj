@@ -28,7 +28,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
-    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -37,7 +37,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
-    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup>
     <NoConfig>true</NoConfig>
@@ -55,7 +55,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Editor\LauncherScriptObject.cs" />
+     <Compile Include="Assets\Nebulae\HybridCLR\Editor\HybridCLREditorConst.cs" />
+     <Compile Include="Assets\Nebulae\HybridCLR\Editor\HybridCLREditorWindow.cs" />
+     <Compile Include="Assets\Nebulae\HybridCLR\Editor\HybridCLRUtility.cs" />
  <Reference Include="UnityEngine">
  <HintPath>F:/unity2020/2019.4.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
@@ -247,6 +249,15 @@
  </Reference>
  <Reference Include="UnityEditor.WindowsStandalone.Extensions">
  <HintPath>F:/unity2020/2019.4.3f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="Mono.Cecil">
+ <HintPath>G:/unity project/Open/FrameworkDemo/Assets/Plugins/ThirdLibraries/ILRuntime/Dependencies/Mono.Cecil.dll</HintPath>
+ </Reference>
+ <Reference Include="Mono.Cecil.Mdb">
+ <HintPath>G:/unity project/Open/FrameworkDemo/Assets/Plugins/ThirdLibraries/ILRuntime/Dependencies/Mono.Cecil.Mdb.dll</HintPath>
+ </Reference>
+ <Reference Include="Mono.Cecil.Pdb">
+ <HintPath>G:/unity project/Open/FrameworkDemo/Assets/Plugins/ThirdLibraries/ILRuntime/Dependencies/Mono.Cecil.Pdb.dll</HintPath>
  </Reference>
  <Reference Include="Sirenix.OdinInspector.Attributes">
  <HintPath>G:/unity project/Open/FrameworkDemo/Assets/Plugins/ThirdLibraries/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll</HintPath>
@@ -658,6 +669,10 @@
  </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{1BFA40E4-A9FF-7E63-31A4-609ED127D55D}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{62C5A896-7C6D-16CF-132F-B8D5F3706307}</Project>
       <Name>Assembly-CSharp</Name>

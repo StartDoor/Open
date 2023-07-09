@@ -11,11 +11,24 @@ namespace Nebulae
 
         internal LauncherSettingData VO;
 
+        public EILType ILType => VO.ilType;
+
+        public bool IsDebugILRuntime => VO.isDebugIL;
+
+        public bool IsTryJitBeforeILRuntime => VO.isTryJitBeforeILRuntime;
+
         public string localResDir { get; private set; }
 
         public string[] SettingFileNetDirList { get; private set; }
 
         public EHotResMode HotResMode => VO.hotResMode; // 这样能使HotResMode变成只读
+
+        internal void Init(LauncherSettingData vo)
+        {
+            this.VO = vo;
+
+            InitHotResRuntime();
+        }
 
         void InitHotResRuntime()
         {

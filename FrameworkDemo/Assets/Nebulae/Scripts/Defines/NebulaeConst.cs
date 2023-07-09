@@ -21,6 +21,10 @@ namespace Nebulae
 
         public const string PLATFORM_NAME_ANDROID = "android";
 
+        public const string LAUNCHER_SETTING_NAME = "launcher_setting";
+
+        static public string HOT_RESOURCES_ROOT_DIR = "Assets/@Resources";
+
         static public string NEBULAE_LIBRARY_DIR = "LibrarayNebulae";
 
         static public string PUBLISH_RES_ROOT_DIR = FileUtility.CombineDirs(false, NEBULAE_LIBRARY_DIR, "Release", "res", PLATFORM_DIR_NAME);
