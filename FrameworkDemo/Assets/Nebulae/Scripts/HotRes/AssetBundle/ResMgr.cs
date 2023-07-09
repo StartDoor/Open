@@ -8,7 +8,7 @@ namespace Nebulae
 {
     public class ResMgr
     {
-        public enum EResMarType
+        public enum EResMgrType
         {
             ASSET_BUNDLE,
             RESOURCES,
@@ -24,11 +24,11 @@ namespace Nebulae
 
         AResMgr _mgr;
 
-        public void Init(EResMarType type, string assetsInfo = null)
+        public void Init(EResMgrType type, string assetsInfo = null)
         {
             switch (type)
             {
-                case EResMarType.ASSET_BUNDLE:
+                case EResMgrType.ASSET_BUNDLE:
                     Debug.Log($"初始化资源管理器... 资源来源：[AssetBundle]  Manifest名称：{assetsInfo}");
                     var newMgr = new AssetBundleResMgr(assetsInfo);
                     if (_mgr != null && _mgr is AssetBundleResMgr)
@@ -37,12 +37,13 @@ namespace Nebulae
                     }
                     _mgr = newMgr;
                     break;
-                case EResMarType.RESOURCES:
+                case EResMgrType.RESOURCES:
                     Debug.Log("初始化资源管理器... 资源来源：[Resources]");
                     _mgr = new ResourceResMgr();
                     break;
-                case EResMarType.ASSET_DATA_BASE: 
+                case EResMgrType.ASSET_DATA_BASE: 
                     Debug.Log($" 初始化资源管理器... 资源来源：[AssetDataBase] 资源根目录：{assetsInfo}");
+                    _mgr = new AssetDataBaseResMgr(assetsInfo);
                     break;
 
             }

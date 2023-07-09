@@ -73,6 +73,7 @@
      <Compile Include="Assets\Nebulae\Scripts\ValueObject\LauncherSettingData.cs" />
      <Compile Include="Assets\Scripts\Launcher.cs" />
      <None Include="Assets\Data\File\testFile.txt" />
+     <None Include="Assets\@Resources\examples\Data\File\testFile.txt" />
  <Reference Include="UnityEngine">
  <HintPath>F:/unity2020/2019.4.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>

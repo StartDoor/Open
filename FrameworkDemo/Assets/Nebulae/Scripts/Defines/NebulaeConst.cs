@@ -11,6 +11,8 @@ namespace Nebulae
 
         public const string AB_EXTENSION = ".ab";
 
+        public const string MANIFEST_FILE_NAME = "manifest";
+
         public const string ROOT_AB_FILE_NAME = "root_assets";
 
         public const string PLATFORM_NAME_PC = "pc";
